@@ -1,0 +1,155 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+
+        <div class="collapse navbar-collapse">
+
+
+            <ul class="nav navbar-nav navbar-left">
+                <li (click)="return()">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <!-- <i class="fa fa-dashboard"></i> -->
+                        <!--  <p class="hidden-lg hidden-md">{{getTitle()}}</p> -->
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-globe"></i>
+                        <b class="caret"></b>
+                        <span class="notification hidden-sm hidden-xs">5</span>
+                        <p class="hidden-lg hidden-md">
+                            5 Notifications
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">Notification 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Notification 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Notification 3</a>
+                        </li>
+                        <li>
+                            <a href="#">Notification 4</a>
+                        </li>
+                        <li>
+                            <a href="#">Another notification</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-search"></i>
+                        <p class="hidden-lg hidden-md">Search</p>
+                    </a>
+                </li>
+            </ul>
+
+            <ul *ngIf="!isAdmin" class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <p>
+                            <b>
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </b>
+                        </p>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li (click)="setting()">
+                            <a>
+                                <i class="fa fa-cog" aria-hidden="true"></i>setting
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li (click)="logout()">
+                            <a>
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="main-content" *ngIf="userExist">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..." />
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <a href="#">
+                                <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..." />
+
+                                <h4 class="title">{{user.username}}
+                                    <br />
+                                    <small>{{user.date | date}}</small>
+                                </h4>
+                            </a>
+                        </div>
+                        <p class="description text-center">
+                            <span *ngIf="user.isActivated" class="label label-success">active</span>
+                            <span *ngIf="!user.isActivated" class="label label-warning">unactive</span>
+
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <button href="#" class="btn btn-simple">
+                            <i class="fa fa-facebook-square"></i>
+                        </button>
+                        <button href="#" class="btn btn-simple">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                        <button href="#" class="btn btn-simple">
+                            <i class="fa fa-google-plus-square"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Content</h4>
+                    </div>
+                    <div class="content">
+                        here we go
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="main-content" *ngIf="!userExist">
+    <div class="container ">
+        <div class="border border-danger  margin-md margin-sm margin-xs padding-lg padding-xs padding-sm padding-md ">
+            <span class="border border-danger">
+                <h2 class="text-center">Page Not Found</h2>
+                <p class="text-center">This page could not be found.</p>
+                <p class="text-center">You might have followed an incorrect link.</p>
+            </span>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,39 @@
+/* [_nghost-c2]{
+    font-size:1em!important;
+} */
+
+:host /deep/ ng2-smart-table checkbox{
+    width: 20px !important;
+    
+}
+
+
+:host /deep/ ng2-smart-table tbody > tr > td:first-child {
+    color: rgb(146, 237, 28);
+    }
+    
+    :host /deep/ ng2-smart-table tbody > tr > td > a {
+    color: #ED1C24;
+    }
+    
+    :host /deep/ ng2-smart-table tbody > tr > th > a {
+    color: rgb(28, 223, 237);
+    }
+    
+    :host /deep/ a { color: #ED1C24; }
+    :host /deep/ a:link { color: #ED1C24; }
+    :host /deep/ a:hover { color: #ED1C24; }
+    :host /deep/ a:focus { color: #ED1C24; }
+    
+    :host /deep/ ng2-smart-table a { color: #ED1C24; }
+    :host /deep/ ng2-smart-table a:link { color: #ED1C24; }
+    :host /deep/ ng2-smart-table a:hover { color: #ED1C24; }
+    :host /deep/ ng2-smart-table a:focus { color: #ED1C24; }
+    
+    :host /deep/ tr.ng2-smart-row a { color: #ED1C24; }
+    :host /deep/ tr.ng2-smart-row a:link { color: #ED1C24; }
+    :host /deep/ tr.ng2-smart-row a:hover { color: #ED1C24; }
+    :host /deep/ tr.ng2-smart-row a:focus { color: #ED1C24; }
+    :host /deep/ ng2-smart-table  {
+        font-size:16px
+    }

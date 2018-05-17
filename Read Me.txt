@@ -1,0 +1,5 @@
+we need changes .
+
+1)replace link of your server hosting in index.js
+2)change proxy link of your server hosting in web-app/proxy.config.json and run ng build if command not found install angular-cli 
+3)change reset-password link in route/auth/resetPassword.html

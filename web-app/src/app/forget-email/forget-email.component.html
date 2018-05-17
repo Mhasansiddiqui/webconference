@@ -1,0 +1,33 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Forget Email</h2>
+  <app-alert></app-alert>
+  <form #f="ngForm" novalidate (ngSubmit)="f.form.valid &&  find(f.value, f.valid)">
+    <div class="form-group">
+      <label for="">Username</label>
+      <input type="text" class="form-control" name="username" [ngModel]="user.username" required minlength="5" maxlength="8" #username="ngModel">
+      <small [hidden]="username.valid || (username.pristine && !f.submitted)" class="text-danger">
+        Username is required (minimum 5 characters).
+      </small>
+
+      <div style="margin-top:10px">
+
+
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+      <div *ngIf="userStatus && f.submitted" class="alert alert-danger">
+        <strong>User Not Found!</strong>
+      </div>
+
+      <div *ngIf="!userStatus && f.submitted " class="alert alert-success">
+        <strong>Your Email Address!  </strong> <p> {{email}} </p>
+      </div>
+    </div>
+
+  </form>
+</div>
